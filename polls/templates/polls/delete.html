@@ -1,0 +1,20 @@
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+<style>
+       BODY
+       {
+        background: linear-gradient(to bottom right,white,red,black) no-repeat;
+       }
+  </style>
+<body>
+    <h1>
+        <p align="center" style="margin-top:40px">
+        Удаление опроса<br>
+        Хотите удалить этот Опрос?
+    </h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <p align="center" style="margin-top:40px">
+        <button class="btn btn-dark" style="width:300px;height:100px" type="submit">Удалить опрос</button>
+    </form>
+</body>

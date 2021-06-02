@@ -1,0 +1,21 @@
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+<style>
+       BODY
+       {
+        background: linear-gradient(to bottom right,white,red,black) no-repeat;
+       }
+  </style>
+    <h1>
+        <p align="center">
+        Создание Опроса
+    </h1>
+    <form method="post">
+        <p align="center" style="margin-top:40px;margin-left:415px;width:700px">
+        {% csrf_token %}
+        {{ form.question_text }}<br>
+        {{ form.pub_date }}<br>
+        <span>{{ error }}</span><br>
+        <button class="btn btn-danger" type="submit">Add poll</button>
+        <button class="btn btn-dark" style="height:40px;width:120px" onclick="document.location='./'">Back</button>
+    </form>

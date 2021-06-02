@@ -1,0 +1,18 @@
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+<style>
+       BODY
+       {
+        background: linear-gradient(to bottom right,white,red,black) no-repeat;
+       }
+  </style>
+    <h1>
+        <p align="center" style="margin-top:40px">
+        Delete choice<br>
+        Wanna delete that choice?
+    </h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <p align="center">
+        <button class="btn btn-danger" type="submit">Yes I do</button>
+    </form>

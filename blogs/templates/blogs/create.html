@@ -1,0 +1,24 @@
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<div class="features">
+     <style>
+       BODY
+       {
+        background: linear-gradient(to bottom right,white,red,black) no-repeat;
+       }
+  </style>
+    <h1>
+        <p align="center" style="color:DarkRed; font-size:35px">
+        Создание Блога
+    </h1>
+    <form method="post" enctype="multipart/form-data">
+        <p align="center" style="margin-top:40px;margin-left:315px;width:900px">
+        {% csrf_token %}
+        {{ form.title }}<br>
+        {{ form.task }}<br>
+        {{ form.image }}<br><br>
+        {{ form.pub_date }}<br><br>
+        <span>{{ error }}</span>
+        <button class="btn btn-dark" type="submit">Добавить блог</button>
+        <button class="btn btn-dark" style="height:40px;width:120px" onclick="document.location='../'">Back</button>
+    </form>
+</div>

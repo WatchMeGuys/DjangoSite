@@ -1,0 +1,21 @@
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+  <style>
+       BODY
+       {
+        background: linear-gradient(to bottom right,white,red,black) no-repeat;
+       }
+  </style>
+    <h1>
+        <p align="center" style="margin-top:40px">
+        Редактирование Опроса
+    </h1>
+    <form method="post" enctype="multipart/form-data">
+        <p align="center" style="margin-top:40px;margin-left:415px;width:700px">
+        {% csrf_token %}
+        {{ form.question_text }}<br>
+        {{ form.pub_date }}<br><br>
+        <span>{{ error }}</span>
+        <p align="center" style="margin-top:40px">
+        <button class="btn btn-dark" onclick="document.location='../'" type="submit">Save changes</button>
+    </form>

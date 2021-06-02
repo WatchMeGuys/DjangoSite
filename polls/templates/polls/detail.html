@@ -1,0 +1,29 @@
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+<style>
+       BODY
+       {
+        background: linear-gradient(to bottom right,white,red,black) no-repeat;
+       }
+  </style>
+<h1>
+            <p align="center" style="margin-top:20px;color:black; font-size:40px">
+            {{ question.question_text }}
+        </h1>
+        {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+        <form action="{% url 'polls:vote' question.id %}" method="post">
+            {% csrf_token %}
+            {% for choice in question.choice_set.all %}
+                <p align="left" style="color:black; font-size:30px">
+                <input type="radio" style="margin-left:40px" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}">
+                <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label>
+                <a style="font-size:13px; color:blue" onclick="document.location='../../polls/{{ choice.id }}/update_choice'">Update</a>
+                <a style="font-size:13px; color:red" onclick="document.location='../../polls/{{ choice.id }}/delete_choice'">Delete</a><br>
+            {% endfor %}
+                <br><input type="submit" class="btn btn-danger" style="width:100px;margin-left:40px" value="Vote">
+                <p align="left">
+                <a class="btn btn-dark" style="margin-left:40px" href="{% url 'polls:index' %}">Back</a>
+                <a class="btn btn-dark" onclick="document.location='update'">Update poll</a>
+                <a class="btn btn-dark" onclick="document.location='delete'">Delete poll</a>
+        </form>

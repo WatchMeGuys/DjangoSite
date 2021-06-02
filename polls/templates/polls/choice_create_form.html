@@ -1,0 +1,16 @@
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+<style>
+       BODY
+       {
+        background: linear-gradient(to bottom right,white,red,black) no-repeat;
+       }
+  </style>
+    <h1><p align="center">Create new choice</h1>
+    <form method="post" value="create">
+        <p align="center" style="margin-top:40px;margin-left:415px;width:700px">
+        {{ form.choice_text }}<br>
+        {{ form.question }}<br><br>
+        {% csrf_token %}
+        <input class="btn btn-dark" type = "submit" value="create">
+    </form>

@@ -1,0 +1,24 @@
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+<style>
+       BODY
+       {
+        background: linear-gradient(to bottom right,white,red,black) no-repeat;
+       }
+  </style>
+    <h1>
+        <p align="center" style="color:black; font-size:30px">
+        {{ question.question_text }}
+    </h1>
+    <ul>
+    {% for choice in question.choice_set.all %}
+        <li>
+            <p align="left" style="color:black; font-size:25px">
+            {{ choice.choice_text }} ---- {{ choice.votes }} vote{{ choice.votes|pluralize }}
+        </li>
+    {% endfor %}
+    </ul>
+    <p style="margin-left:40px">
+    <a class="btn btn-danger" href="{% url 'polls:detail' question.id %}">Vote again</a>
+    <a class="btn btn-dark" href="{% url 'polls:index' %}">To questions</a>
+    </p>

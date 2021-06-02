@@ -1,0 +1,11 @@
+<div class="features">
+    <h1>
+        Удаление блога<br>
+        Хотите удалить этот блог?
+    </h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <button class="btn btn-danger" type="submit">Удалить блог</button>
+        <button class="btn btn-warning" type="submit">Want удалить</button>
+    </form>
+</div>
